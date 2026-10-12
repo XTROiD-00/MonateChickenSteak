@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.MonateChickenSteak" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/monate_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/monate_red_dark</item>
+        <item name="colorSecondary">@color/monate_orange</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:colorBackground">@color/monate_cream</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/monate_charcoal</item>
+        <item name="android:statusBarColor">@color/monate_red_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <action
+        android:id="@+id/action_global_logout"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.monatechickensteak.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.monatechickensteak.ui.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.monatechickensteak.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_home_to_login" app:destination="@id/loginFragment" />
+        <action android:id="@+id/action_home_to_register" app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.monatechickensteak.ui.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.monatechickensteak.ui.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_placeholder" />
+
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.monatechickensteak.ui.OrdersFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_placeholder" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.monatechickensteak.ui.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_placeholder" />
+
+
+    <fragment
+        android:id="@+id/loyaltyFragment"
+        android:name="com.example.monatechickensteak.ui.LoyaltyFragment"
+        android:label="Loyalty"
+        tools:layout="@layout/fragment_loyalty" />
+
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.example.monatechickensteak.ui.ReviewsFragment"
+        android:label="Reviews"
+        tools:layout="@layout/fragment_reviews" />
+
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.example.monatechickensteak.ui.SupportFragment"
+        android:label="Support"
+        tools:layout="@layout/fragment_support" />
+
+</navigation>

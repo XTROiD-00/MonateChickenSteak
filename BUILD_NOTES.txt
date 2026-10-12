@@ -1,0 +1,16 @@
+Monate Chicken & Steak Android project
+
+Changes in this revision:
+- Fixed the Home layout XML ampersands.
+- Updated bottom-tab navigation to pop back to the Home-level stack before switching destinations, so Home/Menu/Cart/Orders/Profile remain reachable from each other.
+- Fixed registration success navigation so it works whether Register was opened from Login or directly from the guest Profile tab.
+- Made Menu API error UI safe if the Fragment view is destroyed while the request is in flight; built-in sample menu remains available when the API is offline.
+
+Backend setup required for real login/register/Google sign-in:
+1. Install PHP 8.1+ with PDO MySQL and MySQL/MariaDB.
+2. Import backend/schema.sql. Copy backend/config/config.example.php to backend/config/config.php and set database credentials and GOOGLE_WEB_CLIENT_ID.
+3. From the project root run: php -S 0.0.0.0:8000 -t backend/public
+4. On Android Emulator, http://10.0.2.2:8000/ reaches the development computer. On a physical phone, set API_BASE_URL in app/build.gradle.kts to your computer's LAN IP and ensure both devices share a network.
+5. Set app/src/main/res/values/strings.xml google_web_client_id to your Google OAuth Web client ID; it must match the server config.
+
+Verification limitation: the project XML was checked, but this environment has not run a successful Android Gradle build or end-to-end emulator test. Authentication will not work until the backend/database and Google OAuth values are configured and running.
